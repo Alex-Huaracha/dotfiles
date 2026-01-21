@@ -42,6 +42,7 @@ main() {
     echo ""
 
     install_fira_code
+    install_iosevka_nerd_font
     echo ""
 
     install_ghostty
