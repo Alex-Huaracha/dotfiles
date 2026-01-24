@@ -8,6 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/installers/homebrew.sh"
 source "$SCRIPT_DIR/installers/ghostty.sh"
 source "$SCRIPT_DIR/installers/fonts.sh"
+source "$SCRIPT_DIR/installers/starship.sh"
 
 # Setup zshrc
 setup_zsh() {
@@ -45,6 +46,9 @@ main() {
     install_iosevka_nerd_font
     echo ""
 
+    install_starship
+    echo ""
+
     install_ghostty
     setup_ghostty_config "$SCRIPT_DIR"
     echo ""
@@ -60,20 +64,8 @@ main() {
     echo "1. Restart your terminal"
     echo "2. Verify installations:"
     echo "   brew --version"
+    echo "   starship --version"
     echo "   ghostty --version"
 }
 
 main "$@"
-# Function to install fnm (Fast Node Manager)
-# install_fnm() {
-#     echo "Checking fnm..."
-
-#     if command_exists fnm; then
-#         echo "fnm already installed"
-#         return
-#     fi
-
-#     echo "Installing fnm via Homebrew..."
-#     brew install fnm
-#     echo "fnm installed (shell configuration detected in dotfiles)"
-# }
