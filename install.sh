@@ -47,6 +47,7 @@ main() {
     echo ""
 
     install_starship
+    setup_starship_config "$SCRIPT_DIR"  # ← Agregar esta línea
     echo ""
 
     install_ghostty
